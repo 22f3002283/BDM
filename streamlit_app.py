@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.title("🎈 My new app")
+st.title("Sales forecastig")
+x=st.selectbox("What do ou like",["Cat","Dog"])
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+   str(x)
 )
