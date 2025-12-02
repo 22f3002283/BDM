@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import sklearn ,random
+import sklearn 
+import random
 st.title("Sales forecastig")
 month=st.selectbox("Select month",["festival","Non Festival"])
 if "non" in month:month="November "
