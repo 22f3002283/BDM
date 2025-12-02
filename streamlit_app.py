@@ -36,15 +36,16 @@ test_processed = pd.concat(
 prediction = None
 
 if method == "Classic":
-    prediction = tree_model.predict(test_processed)[0]
+    if price:prediction = tree_model.predict(test_processed)[0]
 
 elif method == "Pure Deep":
-    prediction = deep_model.predict(test_processed)[0][0]*price
+    if price:prediction = deep_model.predict(test_processed)[0][0]*price
 
 else:  # Hybrid
-    ml_pred = tree_model.predict(test_processed)[0]
-    dl_pred = deep_model.predict(test_processed)[0][0]*price
-    prediction = (ml_pred + dl_pred) / 2
+    if price:
+        ml_pred = tree_model.predict(test_processed)[0]
+        dl_pred = deep_model.predict(test_processed)[0][0]*price
+        prediction = (ml_pred + dl_pred) / 2
 st.subheader("Forecasted Revenue:")
 if prediction is not None:
     st.write(f"₹ {prediction:.2f}")
