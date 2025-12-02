@@ -49,3 +49,5 @@ else:  # Hybrid
 st.subheader("Forecasted Revenue:")
 if prediction is not None:
     st.write(f"₹ {prediction:.2f}")
+    if method:
+        st.write("Stocks sold :",prediction//price)
