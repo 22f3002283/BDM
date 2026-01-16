@@ -42,7 +42,7 @@ if method == "Classic":
 elif method == "Pure Deep":
     prediction = deep_model.predict(test_processed)[0][0]*price
     if price:prediction = int(deep_model.predict(test_processed)[0][0]*price)
-        st.write(f"Units sold {prediction//price}")
+    st.write(f"Units sold {prediction//price}")
 
 else:  # Hybrid
     ml_pred = tree_model.predict(test_processed)[0]
