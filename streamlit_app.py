@@ -53,4 +53,4 @@ else:  # Hybrid
         dl_pred = deep_model.predict(test_processed)[0][0]*price
         prediction = int((ml_pred + dl_pred) / 2)
 st.subheader("Forecasted Revenue:")
-if prediction is not None:st.write(f"₹ {prediction:.2f}")
+if prediction is not None and price>0:st.write(f"₹ {prediction:.2f}")
